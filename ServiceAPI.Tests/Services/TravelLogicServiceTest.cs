@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceAPI.Library.TravelLogic;
+using ServiceAPI.Library.TravelLogic.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace ServiceAPI.Tests.Services
             // Arrange
             ITravelLogicService travelLogicService = new TravelLogicService();
             // Call the service
-            var searchResult = travelLogicService.Search();
+            var searchResult = travelLogicService.Search(TravelLogicSearch.GetDemoObject());
             // Verify
             Assert.IsNotNull(searchResult);
 

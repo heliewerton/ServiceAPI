@@ -52,7 +52,7 @@ namespace ServiceAPI.Library.TravelLogic
             return result;
         }
 
-        public object Search()
+        public object Search(TravelLogicSearch inputSearch)
         {
             object result = null;
             string searchURI = System.Configuration.ConfigurationSettings.AppSettings["TravelLogic.Search.URI"];
@@ -82,7 +82,7 @@ namespace ServiceAPI.Library.TravelLogic
                 }
 
                 // The http body request
-                var content = new StringContent(JsonConvert.SerializeObject(TravelLogicSearch.GetDemoObject()), Encoding.UTF8, "application/json");
+                var content = new StringContent(JsonConvert.SerializeObject(inputSearch), Encoding.UTF8, "application/json");
 
                 // List data response
                 HttpResponseMessage response = client.PostAsync(searchURI, content).Result;

@@ -1,4 +1,5 @@
 ﻿using ServiceAPI.Library.TravelLogic;
+using ServiceAPI.Library.TravelLogic.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace ServiceAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [Route("search")]
-        public IHttpActionResult Search()
+        public IHttpActionResult Search(TravelLogicSearch inputSearch)
         {
             // The Json object to be sent to the client
             object result = null;
@@ -31,7 +32,7 @@ namespace ServiceAPI.Controllers
             try
             {
                 // Calls the Travel Logic search method
-                result = _travelLogicService.Search();
+                result = _travelLogicService.Search(inputSearch);
             }
             catch(Exception ex)
             {

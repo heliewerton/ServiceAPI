@@ -13,7 +13,7 @@ namespace ServiceAPI.Library.TravelLogic
         /// Calss the Travel Logic api to retrieve the search result.
         /// </summary>
         /// <returns></returns>
-        object Search();
+        object Search(TravelLogicSearch inputSearch);
         /// <summary>
         /// Gets a token to access the Travel Logic api.
         /// </summary>
