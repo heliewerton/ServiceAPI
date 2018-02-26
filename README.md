@@ -1,5 +1,5 @@
 # ServiceAPI
-Basic .NET API usage.
+Basic .NET API usage consuming a third-party api.
 
 # How to run? 
 ## Download C# 
