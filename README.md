@@ -11,6 +11,9 @@ nuget install Microsoft.Net.Compilers   # Install C# and VB compilers
 nuget install Microsoft.CodeAnalysis    # Install Language APIs and Services
 
 ## Debug/run the API adn then using Postman or any similar client send the follow json request:
+
+URI: api/travellogic/search
+Request Type: application/json
 {
  "Language":"ENG",
  "Currency":"USD",
