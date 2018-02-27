@@ -7,8 +7,10 @@ Download Visual Studio 2017(https://www.visualstudio.com/pt-br/downloads/), whic
 
 To install the latest release without Visual Studio, run one of the following nuget command lines:
 
+```
 nuget install Microsoft.Net.Compilers   # Install C# and VB compilers
 nuget install Microsoft.CodeAnalysis    # Install Language APIs and Services
+```
 
 ## Download Postman or any other API Toolchain
 
