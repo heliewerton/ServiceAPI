@@ -62,5 +62,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceAPI.Library.Infrastructure\ServiceAPI.Library.Infrastructure.csproj">
+      <Project>{e4505519-2076-46e2-b64a-ceb72acdc171}</Project>
+      <Name>ServiceAPI.Library.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

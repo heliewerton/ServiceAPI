@@ -12,7 +12,7 @@ namespace ServiceAPI.Library.TravelLogic
 {
     public class TravelLogicService : ITravelLogicService
     {
-        private static string endpoint = System.Configuration.ConfigurationSettings.AppSettings["TravelLogic.Endpoint"];
+        private static string endpoint = ServiceAPI.Library.Infrastructure.Settings.TRAVELLOGIC_ENDPOINT;
 
         public TokenResult Authenticate()
         {
@@ -20,7 +20,7 @@ namespace ServiceAPI.Library.TravelLogic
 
             try
             {
-                string tokenURI = System.Configuration.ConfigurationSettings.AppSettings["TravelLogic.Token.URI"];
+                string tokenURI = ServiceAPI.Library.Infrastructure.Settings.TRAVELLOGIC_TOKEN_URI;
 
                 // Create the HTTP client and set the API URL on it
                 HttpClient client = new HttpClient();
@@ -28,7 +28,7 @@ namespace ServiceAPI.Library.TravelLogic
 
                 // Set the API login attributes
                 string urlParameters = string.Format("grant_type=password&username={0}&password={1}",
-                    System.Configuration.ConfigurationSettings.AppSettings["API_LOGIN"], System.Configuration.ConfigurationSettings.AppSettings["API_PWD"]);
+                    ServiceAPI.Library.Infrastructure.Settings.TRAVELLOGIC_API_LOGIN, ServiceAPI.Library.Infrastructure.Settings.TRAVELLOGIC_API_PWD);
 
 
                 // Gets the content
@@ -55,7 +55,7 @@ namespace ServiceAPI.Library.TravelLogic
         public object Search(TravelLogicSearch inputSearch)
         {
             object result = null;
-            string searchURI = System.Configuration.ConfigurationSettings.AppSettings["TravelLogic.Search.URI"];
+            string searchURI = ServiceAPI.Library.Infrastructure.Settings.TRAVELLOGIC_SEARCH_URI;
 
             try
             {
@@ -78,7 +78,7 @@ namespace ServiceAPI.Library.TravelLogic
                 }
                 else
                 {
-                    throw new Exception(System.Configuration.ConfigurationSettings.AppSettings["TravelLogig.NotAuthenticated.Message"]);
+                    throw new Exception(ServiceAPI.Library.Infrastructure.Settings.TRAVELLOGIC_AUTH_ERROR_MSG);
                 }
 
                 // The http body request
